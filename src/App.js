@@ -5,16 +5,6 @@ import './App.css'; // Optional: for styling
 function App() {
   const [movies, setMovies] = useState([]);
   const [genre, setGenre] = useState('28'); // Default genre: Action
-  const [genres, setGenres] = useState([]); // State to store genres
-
-
-  // Fetch movies whenever the genre changes
-  useEffect(() => {
-    axios
-        .get("https://movie-site-server.onrender.com/api/genres")
-        .then((response) => setGenres(response.data))
-        .catch((error) => console.error("Error fetching genres:", error));
-}, []);
 
    // Fetch movies whenever the selected genre changes
    useEffect(() => {
